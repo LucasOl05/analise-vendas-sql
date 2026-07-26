@@ -1,13 +1,10 @@
-# Análise de Vendas - Loja de Informática (SQL Server)
+
 
 Projeto que fiz pra praticar SQL Server e análise de dados. É uma loja de
 informática fictícia, com produtos, clientes, pedidos e itens de pedido.
-A ideia foi simular um cenário parecido com o que um analista jr encontraria
-no dia a dia: um banco simples, dados meio bagunçados (tem cliente sem
-e-mail, produto que nunca vendeu, etc) e um monte de pergunta de negócio pra
-responder com SQL.
-
-## Estrutura do banco
+Um banco simples com dados meio bagunçados (tem cliente sem
+e-mail, produto que nunca vendeu, etc) e um monte de coisas que da pra extrair dados importantes
+dentro do banco que pode acontecer na vida real.
 
 ```
 Categorias (1) ---- (N) Produtos
@@ -17,24 +14,18 @@ Clientes   (1) ---- (N) Pedidos (N) ---- (1) ItensPedido (N) ---- (1) Produtos
 - **Categorias**: categoria dos produtos (Informática, Periféricos, Áudio, Monitores, Acessórios)
 - **Produtos**: 15 produtos cadastrados
 - **Clientes**: 20 clientes
-- **Pedidos**: cabeçalho da venda (cliente, data, vendedor)
-- **ItensPedido**: os itens de cada pedido (produto, quantidade, preço na hora da venda)
+- **Pedidos**: (cliente, data, vendedor)
+- **ItensPedido**:  (produto, quantidade, preço na hora da venda)
 
 ## Arquivos
 
 | Arquivo | O que faz |
 |---|---|
 | `scripts/01_criar_tabelas.sql` | Cria o banco `LojaInfoDB` e as tabelas |
-| `scripts/02_inserir_dados.sql` | Popula com dados de teste (70 pedidos, jan-jun/2024) |
-| `scripts/03_consultas_analise.sql` | 12 consultas de análise |
-| `gerar_dados.py` | Script que usei pra gerar os dados de teste de forma "aleatória mas coerente" |
+| `scripts/02_inserir_dados.sql` | Insere dados aleatorios
+| `scripts/03_consultas_analise.sql` | consultas e análises dos dados |
 
-## Como rodar
 
-1. Abrir o SQL Server Management Studio (ou Azure Data Studio)
-2. Rodar `01_criar_tabelas.sql`
-3. Rodar `02_inserir_dados.sql`
-4. Rodar as consultas de `03_consultas_analise.sql` (uma por uma, cada bloco é separado por `GO`)
 
 ## Principais análises feitas
 
@@ -49,7 +40,7 @@ Clientes   (1) ---- (N) Pedidos (N) ---- (1) ItensPedido (N) ---- (1) Produtos
 - Clientes que compraram só uma vez
 - Ranking de produtos dentro de cada categoria (usando `RANK() OVER (PARTITION BY...)`)
 
-## Alguns resultados que achei interessante (com os dados gerados)
+## Alguns resultados que achei interessante.
 
 - Faturamento total no período: **R$ 253.320,00**, em 70 pedidos
 - Ticket médio: **R$ 3.618,86**
@@ -61,13 +52,6 @@ Clientes   (1) ---- (N) Pedidos (N) ---- (1) ItensPedido (N) ---- (1) Produtos
   promoção ou a sair do catálogo
 - O vendedor Paulo Henrique liderou o período com R$ 113.160,00 em vendas
 
-## Possíveis próximos passos
 
-- Conectar num Power BI / dashboard pra visualizar isso tudo
-- Adicionar uma tabela de devoluções
-- Criar uma stored procedure pra gerar um relatório mensal automático
-- Testar com um volume de dados bem maior (esse aqui tem só 70 pedidos, então
-  os números são pra fins de estudo mesmo)
 
----
-Feito por mim como parte dos meus estudos de SQL Server e análise de dados.
+
