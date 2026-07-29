@@ -1,10 +1,10 @@
 
 
 Projeto que fiz pra praticar SQL Server e análise de dados. É uma loja de
-informática fictícia, com produtos, clientes, pedidos e itens de pedido.
-Um banco simples com dados meio bagunçados (tem cliente sem
+informática inventada com produtos, clientes, pedidos e itens de pedido.
+Um banco simples com dados que não precisam ser inseridos obrigatoriamente (tem cliente sem
 e-mail, produto que nunca vendeu, etc) e um monte de coisas que da pra extrair dados importantes
-dentro do banco que pode acontecer na vida real.
+dentro do banco que acontece na vida real.
 
 ```
 Categorias (1) ---- (N) Produtos
@@ -31,10 +31,10 @@ Clientes   (1) ---- (N) Pedidos (N) ---- (1) ItensPedido (N) ---- (1) Produtos
 
 - Faturamento total e por mês
 - Ticket médio por pedido
-- Top produtos por quantidade vendida x por faturamento (não é a mesma coisa!)
+- Top produtos por quantidade vendida x por faturamento (Oque não é a mesma coisa)
 - Faturamento por categoria
-- Top clientes
-- Produtos parados (nunca vendidos)
+- Melhores clientes
+- Produtos parados 
 - Desempenho por vendedor
 - Crescimento mês a mês (usando `LAG`)
 - Clientes que compraram só uma vez
